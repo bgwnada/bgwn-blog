@@ -42,7 +42,6 @@ export enum TabOption {
   JOVE = 'JOVE',
   KATLYST = 'Katlyst',
   DISTORTED = 'DISTORTED',
-  MR_SQUARE = 'Mr. SQUARE (demos)',
   POSER = 'POSER',
   QUIET = 'QUIET',
   SIXTY9 = 'Sixty9',

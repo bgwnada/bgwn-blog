@@ -18,13 +18,28 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
     TabOption.JOVE,
     TabOption.KATLYST,
     TabOption.DISTORTED,
-    TabOption.MR_SQUARE,
     TabOption.POSER,
     TabOption.QUIET,
     TabOption.SIXTY9,
     TabOption.KALIDESKOPE,
     TabOption.RWYA,
   ];
+
+  const albumStyles: Partial<Record<TabOption, { bg: string; text: string; border: string }>> = {
+    [TabOption.CATCH22]: { bg: 'bg-[#a0bce8]/80', text: 'text-black', border: 'border-[#6d89b0]' },
+    [TabOption.ARIZONA]: { bg: 'bg-[#d33836]/80', text: 'text-black', border: 'border-[#b06b61]' },
+    [TabOption.ABOUTIME]: { bg: 'bg-[#e6e6e6]/80', text: 'text-black', border: 'border-[#cfcfcf]' },
+    [TabOption.GOLDN_MNKY]: { bg: 'bg-[#7b6f58]/80', text: 'text-white', border: 'border-[#6b5f48]' },
+    [TabOption.JOVE]: { bg: 'bg-[#a1a1a1]/80', text: 'text-white', border: 'border-[#4338ca]' },
+    [TabOption.KATLYST]: { bg: 'bg-[#ccd5ca]/80', text: 'text-black', border: 'border-[#8b5cf6]' },
+    [TabOption.DISTORTED]: { bg: 'bg-[#736c6c]/80', text: 'text-black', border: 'border-[#c2410c]' },
+    [TabOption.POSER]: { bg: 'bg-[#111827]/80', text: 'text-white', border: 'border-[#000000]' },
+    [TabOption.QUIET]: { bg: 'bg-black', text: 'text-white', border: 'border-black' },
+    [TabOption.SIXTY9]: { bg: 'bg-[#8f6160]/80', text: 'text-white', border: 'border-[#be185d]' },
+    [TabOption.KALIDESKOPE]: { bg: 'bg-[#d9a442]/80', text: 'text-black', border: 'border-[#0891b2]' },
+    [TabOption.RWYA]: { bg: 'bg-[#a826c5]/80', text: 'text-black', border: 'border-[#0891b2]' },
+    [TabOption.TIX]: { bg: 'bg-[#c4d0dc]/80', text: 'text-black', border: 'border-[#f59e0b]' },
+  };
 
   const blogs: Blog[] = [
     {
@@ -217,13 +232,10 @@ Shot on location in various desert environments, these visuals capture the raw b
               </div>
 
               <div className="space-y-6">
-                {blogs.map((blog) => (
-                  <div key={blog.id} className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
-                    <h3 className="text-2xl font-semibold mb-2">{blog.title}</h3>
-                    <div className="text-sm text-black mb-4">{blog.date} — {blog.author}</div>
-                    <p className="text-black">{blog.content}</p>
-                  </div>
-                ))}
+                <div className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
+                  <h3 className="text-2xl font-semibold mb-2">Blog</h3>
+                  <div className="text-sm text-black mb-4">Posts are hidden.</div>
+                </div>
               </div>
               
             </div>
@@ -381,17 +393,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 <p className="text-gray-600 text-sm">2024</p>
               </div>
 
-              {/* MR_SQUARE Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.MR_SQUARE)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/mrsquare.jpg" alt="Mr. SQUARE (demos) cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-green-600 transition-colors">Mr. SQUARE (demos)</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
+              
 
               {/* TIX Album Card */}
               <div
@@ -434,17 +436,10 @@ Shot on location in various desert environments, these visuals capture the raw b
               <h3 className="text-2xl font-bold text-black mb-4">Support These Artists</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[{
-                  name: 'Catch22',
-                  desc: 'Experimental Hip-Hop',
-                  donate: '#'
-                }, {
-                  name: 'ARIZONA',
-                  desc: 'Alternative Rock / Indie',
-                  donate: '#'
-                }, {
-                  name: 'ABOUTIME',
-                  desc: 'Lo-Fi Beats',
-                  donate: '#'
+                  name: 'Mars Togaia',
+                  desc: 'Alternative Neo-Soul / Pop',
+                  donate: '#',
+                  blurb: "Atlanta local and native, Mars takes her performance energy to the booth to sooth your soul."
                 }].map((artist) => (
                   <div key={artist.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex flex-col">
                     <div className="flex items-center justify-between mb-4">
@@ -455,6 +450,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                       <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-black font-bold">{artist.name.split('')[0]}</div>
                     </div>
                     <p className="text-sm text-white mb-4">You can support this artist by buying merch, streaming, or donating directly.</p>
+                    {artist.blurb && <p className="text-sm text-gray-200 mb-4">{artist.blurb}</p>}
                     <div className="mt-auto flex gap-2">
                       <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
                       <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
@@ -469,22 +465,16 @@ Shot on location in various desert environments, these visuals capture the raw b
               <h3 className="text-2xl font-bold text-black mb-4">Support These Businesses</h3>
               <div className="space-y-4">
                 {[{
-                  name: 'Cornerstone Coffee + Co',
-                  city: 'Albany, GA',
-                  href: '#'
-                }, {
-                  name: 'The Network Coffee Shop',
-                  city: 'Valdosta, GA',
-                  href: '#'
-                }, {
-                  name: 'Maté Factor',
-                  city: 'Savannah, GA',
-                  href: '#'
+                  name: 'Block Love',
+                  city: 'Charlotte, NC',
+                  href: '#',
+                  blurb: 'Non-Profit organization helping the homeless'
                 }].map((biz) => (
                   <div key={biz.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex items-center justify-between">
                     <div>
                       <h3 className="text-lg font-bold text-black">{biz.name}</h3>
                       <div className="text-sm text-gray-400">{biz.city}</div>
+                      {biz.blurb && <div className="text-sm text-gray-400 mt-2">{biz.blurb}</div>}
                     </div>
                     <div className="flex items-center gap-3">
                       <a href={biz.href} target="_blank" rel="noreferrer" className="px-3 py-2 bg-white text-black rounded font-bold text-sm">Visit</a>
@@ -627,22 +617,25 @@ Shot on location in various desert environments, these visuals capture the raw b
                 }
               ]
                 .map((show, i) => (
-                  <div key={i} className="bg-slate-800/40 hover:bg-slate-700/60 p-6 rounded-lg flex flex-col md:flex-row md:items-center justify-between border border-slate-600/20 transition-colors group">
+                  <div key={i} className="relative bg-slate-800/40 p-6 rounded-lg flex flex-col md:flex-row md:items-center justify-between border border-slate-600/20 transition-colors group filter grayscale opacity-70 pointer-events-none">
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="bg-yellow-400 text-black px-3 py-1 rounded-full font-bold text-sm">COMING SOON</span>
+                    </div>
                     <div className="flex items-center mb-4 md:mb-0">
-                      <div className="bg-slate-200 text-slate-900 font-bold p-3 rounded text-center min-w-[70px] mr-6">
+                      <div className="bg-slate-700 text-slate-300 font-bold p-3 rounded text-center min-w-[70px] mr-6">
                         <div className="text-sm tracking-widest">{show.date.split(' ')[0]}</div>
                         <div className="text-2xl leading-none">{show.date.split(' ')[1]}</div>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-slate-200 group-hover:text-blue-300 transition-colors">{show.venue}</h3>
-                        <div className="flex items-center text-black font-bold text-sm mt-1">
+                        <h3 className="text-xl font-bold text-slate-200 transition-colors">{show.venue}</h3>
+                        <div className="flex items-center text-slate-300 font-bold text-sm mt-1">
                           <MapPin className="w-3 h-3 mr-1" /> {show.city}
                         </div>
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:justify-end w-full md:w-auto">
                       <span className="text-sm font-bold text-slate-100 mr-6 bg-black px-3 py-1 rounded-full">{show.university}</span>
-                      <button className="bg-slate-200 text-slate-900 text-sm font-bold px-4 py-2 rounded hover:bg-slate-300 transition-colors">
+                      <button disabled aria-disabled className="bg-gray-400 text-gray-700 text-sm font-bold px-4 py-2 rounded cursor-not-allowed">
                         TICKETS
                       </button>
                     </div>
@@ -1032,29 +1025,7 @@ Shot on location in various desert environments, these visuals capture the raw b
           </>
         );
 
-      case TabOption.MR_SQUARE:
-        return (
-          <>
-            <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">Mr. SQUARE (demos)</h2>
-
-              <div className="items-start md:items-stretch gap-8">
-                <div className="w-full flex items-center justify-center">
-                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/mrsquare.jpg" alt="Mr. SQUARE (demos) cover art" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-
-                <div className="w-full">
-                  <div className="mb-6">
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1972117716&color=%23f2f2f2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/invasivemastermind" title="invasivemastermind" target="_blank" style="color: #cccccc; text-decoration: none;">invasivemastermind</a> · <a href="https://soundcloud.com/invasivemastermind/sets/mr-square" title="Mr. Square (demos)" target="_blank" style="color: #cccccc; text-decoration: none;">Mr. Square (demos)</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        );
-
+    
       case TabOption.JOVE:
         return (
           <>
@@ -1319,7 +1290,7 @@ Shot on location in various desert environments, these visuals capture the raw b
 
       <div className="max-w-6xl mx-auto relative z-0 min-h-full flex flex-col">
         {/* Main Card */}
-        <div className="bg-[#999478]/80 backdrop-blur-sm rounded-lg shadow-xl border border-[#8a856a] overflow-hidden min-h-[800px] flex flex-col transition-all duration-300">
+        <div className={`${albumStyles[activeTab as TabOption] ? `${albumStyles[activeTab as TabOption]!.bg} ${albumStyles[activeTab as TabOption]!.text} ${albumStyles[activeTab as TabOption]!.border}` : 'bg-[#999478]/80 text-black border-[#8a856a]'} backdrop-blur-sm rounded-lg shadow-xl overflow-hidden min-h-[800px] flex flex-col transition-all duration-300`}>
 
 
 

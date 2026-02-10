@@ -112,12 +112,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
               logoText="DISTORTED"
               onClick={() => handleNavigation(TabOption.DISTORTED)}
             />
-            <ArtistCard
-              name="Mr. SQUARE (demos)"
-              color="bg-green-600"
-              logoText="MR SQUARE"
-              onClick={() => handleNavigation(TabOption.MR_SQUARE)}
-            />
+            
             <ArtistCard
               name="QUIET"
               color="bg-gray-600"

@@ -16,7 +16,6 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
     TabOption.JOVE,
     TabOption.KATLYST,
     TabOption.DISTORTED,
-    TabOption.MR_SQUARE,
     TabOption.POSER,
     TabOption.QUIET,
     TabOption.SIXTY9,
