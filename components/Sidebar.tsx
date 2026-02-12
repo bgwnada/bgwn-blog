@@ -45,7 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
         aria-label="Toggle sidebar"
         className="fixed top-4 left-4 z-60 p-0 rounded-md hover:bg-black transition"
       >
-        <img src="/assets/bgwn_jove.png" alt="bgwn jove logo (transparent)" className="w-[4.5rem] h-[4.5rem] object-contain bg-transparent" />
+        <img src="/public/assets/bgwn_jove.png" alt="bgwn jove logo (transparent)" className="w-[4.5rem] h-[4.5rem] object-contain bg-transparent" />
       </button>
 
       {/* Overlay shown when sidebar is open */}
@@ -64,7 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
 
         {/* Logo Area */}
         <div className="p-6 bg-transparent text-white cursor-pointer" onClick={() => handleNavigation(TabOption.HOME)}>
-          <img src="/assets/bgwn_jove.png" alt="bgwn jove logo (transparent)" className="w-full h-auto bg-transparent" />
+          <img src="/public/assets/bgwn_jove.png" alt="bgwn jove logo (transparent)" className="w-full h-auto bg-transparent" />
         </div>
 
       <div className="p-6 space-y-8 flex-grow">

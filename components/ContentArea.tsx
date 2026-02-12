@@ -113,7 +113,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className={`p-4 md:p-6 mb-8 shadow-2xl cursor-pointer transform transition-all duration-500 hover:scale-[1.01]`}
               >
                 <img
-                  src={isLogoAnimating ? '/assets/bgwn-S_logo.png' : '/assets/home_bgwn_logo.png'}
+                  src={isLogoAnimating ? '/public/assets/bgwn-S_logo.png' : '/public/assets/home_bgwn_logo.png'}
                   alt="bgwn records logo"
                   className={`w-full max-w-md mx-auto object-contain ${isLogoAnimating ? 'animate-logo-spin' : ''}`}
                 />
@@ -193,7 +193,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Main Center Logo */}
               <div className="flex justify-center mb-8">
                 <img
-                  src="/assets/nothing_fancy.png"
+                  src="/public/assets/nothing_fancy.png"
                   alt="bgwn blog logo"
                   className="w-full max-w-md mx-auto object-contain"
                 />
@@ -257,7 +257,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
-                  <img src="/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-blue-600 transition-colors">CATCH22</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -269,7 +269,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/ARIZONA.jpg" alt="ARIZONA cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/ARIZONA.jpg" alt="ARIZONA cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-red-600 transition-colors">ARIZONA</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -281,7 +281,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/aboutime.jpg" alt="ABOUTIME cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/aboutime.jpg" alt="ABOUTIME cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-slate-600 transition-colors">ABOUTIME</h3>
                 <p className="text-gray-600 text-sm">Lo-Fi Sessions • 2024</p>
@@ -293,7 +293,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/golden_monkey.jpg" alt="Goldn Mnky cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/golden_monkey.jpg" alt="Goldn Mnky cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-[#7b6f58] transition-colors">Goldn Mnky</h3>
                 <p className="text-gray-600 text-sm">Demos • 2024</p>
@@ -305,7 +305,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">POSER</h3>
                 <p className="text-gray-600 text-sm">Demos • 2024</p>
@@ -317,7 +317,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">QUIET</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -329,7 +329,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-pink-600 transition-colors">Sixty9</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -341,7 +341,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-cyan-600 transition-colors">KALIDESKOPE</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -353,7 +353,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">RWYA</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -363,7 +363,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div onClick={() => onTabChange(TabOption.JOVE)} 
               className="cursor-default group transition-transform duration-300 hover:scale-105">
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-indigo-700 transition-colors">JOVE</h3>
                 <p className="text-gray-600 text-sm">2025</p>
@@ -375,7 +375,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-purple-600 transition-colors">KATLYST</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -387,7 +387,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-orange-600 transition-colors">DISTORTED</h3>
                 <p className="text-gray-600 text-sm">2024</p>
@@ -401,7 +401,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 className="cursor-pointer group transition-transform duration-300 hover:scale-105"
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
+                  <img src="/public/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">TIX</h3>
                 <p className="text-gray-600 text-sm">2025</p>
@@ -417,7 +417,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div onClick={() => onTabChange(TabOption.CATCH22)} className="bg-black group hover:bg-blue-900/60 transition-colors rounded-xl p-6 cursor-pointer border">
                 <div className="aspect-square mb-4 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-[1.02] transition-transform overflow-hidden">
-                  <img src="/assets/profile.jpg" alt="Invasive Mastermind" className="w-full h-full object-cover" />
+                  <img src="/public/assets/profile.jpg" alt="Invasive Mastermind" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-1">Invasive Mastermind</h3>
                 <p className="text-blue-200 text-sm">Neo Soul / Hip-Hop</p>
@@ -655,7 +655,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual life */}
               <a href="https://www.youtube.com/watch?v=LBCJ9aErTrI" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/life_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/life_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -671,7 +671,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual tumbling_down */}
               <a href="https://www.youtube.com/watch?v=phQMkiI7n5Y" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/tumbling_down_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/tumbling_down_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -687,7 +687,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual cerebral_choir */}
               <a href="https://youtu.be/w3MuCDUIdAM" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/cerebral_choir_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/cerebral_choir_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -703,7 +703,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual arrapin */}
               <a href="https://youtu.be/j9TuI_OjqHg" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/arrapin_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/arrapin_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -719,7 +719,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual Triple War */}
               <a href="https://www.youtube.com/watch?v=V5smnYz9GzQ" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/triple_war.jpg" alt="Triple War Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/triple_war.jpg" alt="Triple War Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -735,7 +735,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual THE SOLUTION */}
               <a href="https://www.youtube.com/watch?v=DLEuhAPLph0" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/the_solution.jpg" alt="THE SOLUTION Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/the_solution.jpg" alt="THE SOLUTION Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -751,7 +751,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual Life Lyric Video */}
               <a href="https://www.youtube.com/watch?v=2_PDlsCy_FA" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/life_lyrics.jpg" alt="Life Lyric Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/life_lyrics.jpg" alt="Life Lyric Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -767,7 +767,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual Dangerous */}
               <a href="https://youtu.be/vQqadNE2hQc" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/dangerous_im.jpg" alt="Dangerous Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/dangerous_im.jpg" alt="Dangerous Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -783,7 +783,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual KEEP IT 100 */}
               <a href="https://www.youtube.com/watch?v=iZwQiyIbMDw" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/keep_it_100.jpg" alt="KEEP IT 100 Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/keep_it_100.jpg" alt="KEEP IT 100 Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -799,7 +799,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual We Inspire */}
               <a href="https://www.youtube.com/watch?v=82dHMnXdm00" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/we_inspire.jpg" alt="We Inspire Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/we_inspire.jpg" alt="We Inspire Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -815,7 +815,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               {/* Visual One Day */}
               <a href="https://www.youtube.com/watch?v=P6UUj7XnDlM" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
-                  <img src="./assets/one_day.jpg" alt="One Day Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <img src="./public/assets/one_day.jpg" alt="One Day Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
@@ -837,14 +837,14 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art - use actual cover image */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
+                <img src="/public/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Merch - Catch22 Hoodies */}
             <div className="flex justify-center mb-6">
               <a href="/shop" target="_blank" rel="noreferrer" className="block w-full">
-                <img src="/assets/catch_hoodies.png" alt="CATCH22 hoodies" className="w-full object-contain rounded-md" />
+                <img src="/public/assets/catch_hoodies.png" alt="CATCH22 hoodies" className="w-full object-contain rounded-md" />
               </a>
             </div>
 
@@ -880,7 +880,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full flex items-center justify-center">
                   <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
+                    <img src="/public/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -908,9 +908,9 @@ Shot on location in various desert environments, these visuals capture the raw b
             </div>
             <div className="w-full mt-6">
               <div className="">
-                <img src="/assets/poserCover_2.jpg" alt="POSER cover 2" className="w-full object-cover rounded-md shadow-md" />
-                <img src="/assets/poser_lyrics_cover.jpg" alt="POSER lyrics cover" className="w-full object-cover rounded-md shadow-md" />
-                <img src="/assets/poser_tracklist_cover.jpg" alt="POSER tracklist cover" className="w-full object-cover rounded-md shadow-md" />
+                <img src="/public/assets/poserCover_2.jpg" alt="POSER cover 2" className="w-full object-cover rounded-md shadow-md" />
+                <img src="/public/assets/poser_lyrics_cover.jpg" alt="POSER lyrics cover" className="w-full object-cover rounded-md shadow-md" />
+                <img src="/public/assets/poser_tracklist_cover.jpg" alt="POSER tracklist cover" className="w-full object-cover rounded-md shadow-md" />
               </div>
             </div>
           </>
@@ -922,7 +922,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
+                <img src="/public/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -962,7 +962,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
+                <img src="/public/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
               </div>
             </div>
           </>
@@ -974,7 +974,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
+                <img src="/public/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
               </div>
             </div>
           </>
@@ -986,7 +986,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
+                <img src="/public/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
               </div>
             </div>
           </>
@@ -1001,7 +1001,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full flex items-center justify-center">
                   <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
+                    <img src="/public/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -1035,7 +1035,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full flex items-center justify-center">
                   <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
+                    <img src="/public/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -1073,10 +1073,10 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full items-center justify-center">
                   <div className="relative w-full aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
+                    <img src="/public/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
                   </div>
                   <div className="relative w-full aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/KATLYST-back-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
+                    <img src="/public/assets/KATLYST-back-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -1112,7 +1112,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8">
                 <div className="w-full md:w-1/2 flex items-center justify-center">
                   <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/golden_monkey.jpg" alt="Goldn Mnky cover art" className="w-full h-full object-cover" />
+                    <img src="/public/assets/golden_monkey.jpg" alt="Goldn Mnky cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -1152,7 +1152,7 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8">
                 <div className="w-full md:w-1/2 flex items-center justify-center">
                   <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/aboutime.jpg" alt="ABOUTIME cover art" className="w-full h-full object-cover" />
+                    <img src="/public/assets/aboutime.jpg" alt="ABOUTIME cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -1180,7 +1180,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art - ARIZONA.jpg */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] overflow-hidden rounded-lg">
-                <img src="/assets/ARIZONA.jpg" alt="ARIZONA cover art" className="w-full h-full object-cover" />
+                <img src="/public/assets/ARIZONA.jpg" alt="ARIZONA cover art" className="w-full h-full object-cover" />
               </div>
 
               <div className="w-full max-w-4xl">
@@ -1269,7 +1269,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art - use actual cover image */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
+                <img src="/public/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
               </div>
 
               
