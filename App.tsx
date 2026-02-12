@@ -11,7 +11,7 @@ function App() {
     <div
       className="flex h-screen w-full overflow-hidden"
       style={{
-        backgroundImage: "url('/public/assets/bgwn_bg.jpg')",
+        backgroundImage: "url('/assets/bgwn_bg.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
