@@ -438,7 +438,9 @@ Shot on location in various desert environments, these visuals capture the raw b
                 {[{
                   name: 'Mars Togaia',
                   desc: 'Alternative Neo-Soul / Pop',
-                  donate: '#',
+                  donate: null,
+                  spotify: 'https://open.spotify.com/artist/6dNE6iWNQtc1Z8DDAtU8yQ',
+                  hideCTAs: true,
                   blurb: "Atlanta local and native, Mars takes her performance energy to the booth to sooth your soul."
                 }].map((artist) => (
                   <div key={artist.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex flex-col">
@@ -452,8 +454,15 @@ Shot on location in various desert environments, these visuals capture the raw b
                     <p className="text-sm text-white mb-4">You can support this artist by buying merch, streaming, or donating directly.</p>
                     {artist.blurb && <p className="text-sm text-gray-200 mb-4">{artist.blurb}</p>}
                     <div className="mt-auto flex gap-2">
-                      <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
-                      <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
+                      {!artist.hideCTAs && artist.donate && (
+                        <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
+                      )}
+                      {!artist.hideCTAs && (
+                        <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
+                      )}
+                      {artist.spotify && (
+                        <a href={artist.spotify} target="_blank" rel="noreferrer" className="px-4 py-2 bg-[#1DB954] hover:bg-[#17a84a] text-black rounded-md text-sm font-bold">Listen</a>
+                      )}
                     </div>
                   </div>
                 ))}
