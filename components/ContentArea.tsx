@@ -161,18 +161,18 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="bg-black/20 p-10 md:p-14 rounded-xl backdrop-blur-md border border-white/10 shadow-2xl">
                 <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4 mb-6">About Us</h2>
                 <div className="prose prose-invert prose-lg">
-                  <p>bgwn is the philosphy of for a man of rock bottom. </p> <br /> 
+                  <p>bgwn is the philosphy of for a man of rock bottom. </p> <br />
 
                   <p>It is the ethos of creating greatness from nothing. <br /> <br />
-                  It is the collective of artists, creators and agitators who believe <i>nothing</i> can stop them.</p>
+                    It is the collective of artists, creators and agitators who believe <i>nothing</i> can stop them.</p>
 
                   <p>Founded from the brain and experience of invasive mastermind, bgwn stands for <b>BE GREAT WITH NOTHING</b></p> <br />
 
                   <p>As a realist, Mr. Mastermind asks: what if you had nothing? What if you had no money, no connections, no resources? What if you were born with nothing and had to create everything from scratch? <br /> <br />
-                  What if the point was to begin without. To enter the voide and become devoid of emotion, struggle, pain and transmute it all into LOVE</p> <br />
+                    What if the point was to begin without. To enter the voide and become devoid of emotion, struggle, pain and transmute it all into LOVE</p> <br />
 
                   <p>Mr. Mastermind has found his true greatness in nothing, in boredom, in solidarity. <i>Now get this... WE ARE NOT <br /> <br />
-                  HENRY DAVID THOREAU SUGGESTING YOU LEAVE HOME AND BUILD A SHACK ON YOUR FRIENDS LAWN.</i> Trust me, I tried.</p> <br />
+                    HENRY DAVID THOREAU SUGGESTING YOU LEAVE HOME AND BUILD A SHACK ON YOUR FRIENDS LAWN.</i> Trust me, I tried.</p> <br />
 
                   <p>BGWN is here as a guiding post, an arrow on the trail, and frame of mind to <u>keep</u> the BACKSTEPPERS, the forward thinkers, the distracted aligned.</p> <br />
 
@@ -237,7 +237,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                   <div className="text-sm text-black mb-4">Posts are hidden.</div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         );
@@ -360,8 +360,8 @@ Shot on location in various desert environments, these visuals capture the raw b
               </div>
 
               {/* JOVE Album Card */}
-              <div onClick={() => onTabChange(TabOption.JOVE)} 
-              className="cursor-default group transition-transform duration-300 hover:scale-105">
+              <div onClick={() => onTabChange(TabOption.JOVE)}
+                className="cursor-default group transition-transform duration-300 hover:scale-105">
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
                   <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
                 </div>
@@ -393,7 +393,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 <p className="text-gray-600 text-sm">2024</p>
               </div>
 
-              
+
 
               {/* TIX Album Card */}
               <div
@@ -430,7 +430,7 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <div className="p-8 h-full overflow-y-auto">
             <h2 className="text-3xl font-bold text-black mb-6 border-b border-white/10 pb-4">Support</h2>
-            
+
             {/* Support Artists Section */}
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-black mb-4">Support These Artists</h3>
@@ -438,10 +438,53 @@ Shot on location in various desert environments, these visuals capture the raw b
                 {[{
                   name: 'Mars Togaia',
                   desc: 'Alternative Neo-Soul / Pop',
+                  img: '/assets/mars.jpg',
                   donate: null,
                   spotify: 'https://open.spotify.com/artist/6dNE6iWNQtc1Z8DDAtU8yQ',
                   hideCTAs: true,
-                  blurb: "Atlanta local and native, Mars takes her performance energy to the booth to sooth your soul."
+                  blurb: "Atlanta local and native, Mars takes her performance energy to the booth to sooth your soul.",
+                  recentRelease: {
+                    title: "Scorpionic",
+                    link: "https://www.youtube.com/watch?v=gIU-aganx_c",
+                    date: "2022-11-11",
+                    cover: "/assets/releases/scorp.jpg",
+                    type: "single",
+                    platform: "Youtube"
+                  }
+                }, {
+                  name: 'P9 the Hieroglyph',
+                  desc: 'Neo Hip Hop / RnB',
+                  href: 'https://www.instagram.com/pherow9/',
+                  img: '/assets/pherow.jpg',
+                  hideCTAs: true,
+                  donate: null,
+                  spotify: "https://www.youtube.com/channel/UCMRIKpnPX6SWCYhs5r_ox0g",
+                  blurb: "P9 the Hieroglyph is a multi-talented artist hailing from the vibrant city of Atlanta, Georgia. With a unique blend of neo hip-hop and RnB, P9 crafts music that resonates deeply with listeners.",
+                  recentRelease: {
+                    title: "Love No Mo",
+                    link: "https://www.youtube.com/watch?v=-nhyB9vu_fE",
+                    date: "2026-02-15",
+                    cover: "/assets/releases/lovenomo.jpg",
+                    type: "single",
+                    platform: "Youtube"
+                  }
+                }, {
+                  name: 'Brutha War',
+                  desc: 'Christian Hip Hop / Rap',
+                  href: 'https://www.instagram.com/bruthawar/',
+                  img: '/assets/brutha.jpg',
+                  spotify: 'https://open.spotify.com/artist/7n2wXPK2f2rjwzmOhEbIBE',
+                  blurb: "Brutha War is a Christian hip-hop artist based in Atlanta, Georgia hailing and repping the West Coast proudly. He pushesPowerful TRUTH MUSIC, CRAZY true stories, & INSPIRATIONAL messages!",
+                  hideCTAs: true,
+                  donate: null,
+                  recentRelease: {
+                    title: "Hush",
+                    link: "https://www.youtube.com/watch?v=TdAw6bDkmNQ",
+                    date: "2026-02-12",
+                    cover: "/assets/releases/hush.jpg",
+                    type: "single",
+                    platform: "Youtube"
+                  }
                 }].map((artist) => (
                   <div key={artist.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex flex-col">
                     <div className="flex items-center justify-between mb-4">
@@ -449,16 +492,38 @@ Shot on location in various desert environments, these visuals capture the raw b
                         <h3 className="text-xl font-bold text-white">{artist.name}</h3>
                         <div className="text-sm text-gray-400">{artist.desc}</div>
                       </div>
-                      <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-black font-bold">{artist.name.split('')[0]}</div>
+                      <img src={artist.img || '/assets/profile.jpg'} alt={`${artist.name} profile`} className="w-16 h-16 rounded-full object-cover" />
                     </div>
-                    <p className="text-sm text-white mb-4">You can support this artist by buying merch, streaming, or donating directly.</p>
                     {artist.blurb && <p className="text-sm text-gray-200 mb-4">{artist.blurb}</p>}
+
+                    <div className="text-sm text-gray-200 mb-4">
+                      <div className="font-semibold text-white mb-1">Recent Release</div>
+                      {artist.recentRelease ? (
+                        <div className="flex items-center gap-4">
+                          {artist.recentRelease.link ? (
+                            <a href={artist.recentRelease.link} target="_blank" rel="noreferrer" className="text-white underline">{artist.recentRelease.title || "" || 'View Release'}</a>
+                          ) : (
+                            <div className="text-white">{artist.recentRelease.title || ""}</div>
+                          )}
+                          {artist.recentRelease.date && <div className="text-xs text-gray-400">{artist.recentRelease.date}</div>}
+                        <a href={artist.recentRelease.link} target="_blank" rel="noreferrer" className="">
+                          <img src={artist.recentRelease.cover || '/assets/profile.jpg'} alt={`${artist.recentRelease.title} profile`} className="w-30 h-16" />
+                        </a>
+                        </div>
+                      ) : (
+                        <div className="text-gray-400">No recent release listed</div>
+                      )}
+                    </div>
+
                     <div className="mt-auto flex gap-2">
                       {!artist.hideCTAs && artist.donate && (
                         <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
                       )}
                       {!artist.hideCTAs && (
                         <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
+                      )}
+                      {!artist.hideCTAs && artist.href && (
+                        <a href={artist.href} target="_blank" rel="noreferrer" className="px-4 py-2 bg-white text-black rounded-md text-sm font-bold">Visit</a>
                       )}
                       {artist.spotify && (
                         <a href={artist.spotify} target="_blank" rel="noreferrer" className="px-4 py-2 bg-[#1DB954] hover:bg-[#17a84a] text-black rounded-md text-sm font-bold">Listen</a>
@@ -481,9 +546,9 @@ Shot on location in various desert environments, these visuals capture the raw b
                 }].map((biz) => (
                   <div key={biz.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex items-center justify-between">
                     <div>
-                      <h3 className="text-lg font-bold text-black">{biz.name}</h3>
-                      <div className="text-sm text-gray-400">{biz.city}</div>
-                      {biz.blurb && <div className="text-sm text-gray-400 mt-2">{biz.blurb}</div>}
+                      <h3 className="text-lg font-bold text-white">{biz.name}</h3>
+                      <div className="text-sm text-white">{biz.city}</div>
+                      {biz.blurb && <div className="text-sm text-white mt-2">{biz.blurb}</div>}
                     </div>
                     <div className="flex items-center gap-3">
                       <a href={biz.href} target="_blank" rel="noreferrer" className="px-3 py-2 bg-white text-black rounded font-bold text-sm">Visit</a>
@@ -1034,7 +1099,7 @@ Shot on location in various desert environments, these visuals capture the raw b
           </>
         );
 
-    
+
       case TabOption.JOVE:
         return (
           <>
@@ -1156,7 +1221,7 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
-                  <h2 className="text-4xl font-bold text-black mb-6">ABOUTIME</h2>
+              <h2 className="text-4xl font-bold text-black mb-6">ABOUTIME</h2>
 
               <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8">
                 <div className="w-full md:w-1/2 flex items-center justify-center">
@@ -1281,7 +1346,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
               </div>
 
-              
+
             </div>
           </>
         );
