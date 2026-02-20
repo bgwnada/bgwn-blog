@@ -499,7 +499,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                     <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
                       <img src={album.imageUrl} alt={`${album.title} cover art`} className="w-full h-full object-cover" />
                     </div>
-                    <h3 
+                    <h3
                       className="text-xl font-bold text-black transition-colors"
                       onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'black')}
@@ -612,9 +612,9 @@ Shot on location in various desert environments, these visuals capture the raw b
                             <div className="text-white">{artist.recentRelease.title || ""}</div>
                           )}
                           {artist.recentRelease.date && <div className="text-xs text-gray-400">{artist.recentRelease.date}</div>}
-                        <a href={artist.recentRelease.link} target="_blank" rel="noreferrer" className="">
-                          <img src={artist.recentRelease.cover || '/assets/profile.jpg'} alt={`${artist.recentRelease.title} profile`} className="w-30 h-16" />
-                        </a>
+                          <a href={artist.recentRelease.link} target="_blank" rel="noreferrer" className="">
+                            <img src={artist.recentRelease.cover || '/assets/profile.jpg'} alt={`${artist.recentRelease.title} profile`} className="w-30 h-16" />
+                          </a>
                         </div>
                       ) : (
                         <div className="text-gray-400">No recent release listed</div>
@@ -1186,15 +1186,7 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">DISTORTED</h2>
-
               <div className="items-start md:items-stretch gap-8">
-                <div className="w-full flex items-center justify-center">
-                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-
                 <div className="w-full">
                   <div className="mb-6">
                     <iframe
@@ -1208,6 +1200,101 @@ Shot on location in various desert environments, these visuals capture the raw b
                       allowFullScreen
                       className="w-full rounded-lg"
                     ></iframe>
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <img src="https://f4.bcbits.com/img/a2309965665_16.jpg" alt="DISTORTED cover art" className="w-full object-cover rounded-md shadow-md" />
+
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=2130465253/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Guilt Free from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/guilt-free-from-distorted-instrumental">Guilt Free from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=1695886251/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Arapping from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/arapping-from-distorted-instrumental">Arapping from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=1027465228/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Out My Garden from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/out-my-garden-from-distorted-instrumental">Out My Garden from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=2546484067/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - I Remember from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/i-remember-from-distorted-instrumental">I Remember from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=585817453/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Mute from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/mute-from-distorted-instrumental">Mute from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=2844847555/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Greiger from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/greiger-from-distorted-instrumental">Greiger from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=64216054/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Let Go from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/let-go-from-distorted-instrumental">Let Go from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=3163948020/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - ImADreamer from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/imadreamer-from-distorted-instrumental">ImADreamer from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=3970208486/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Callin' (Outro) from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/callin-outro-from-distorted-instrumental">Callin' (Outro) from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
                   </div>
                 </div>
               </div>
