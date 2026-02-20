@@ -99,6 +99,223 @@ Shot on location in various desert environments, these visuals capture the raw b
     setTimeout(() => setIsLogoAnimating(false), 2000);
   };
 
+  interface Album {
+    title: string;
+    releaseDate: string;
+    producer: string;
+    imageUrl: string;
+    tabOption: TabOption;
+    displayType?: string;
+    hoverColorClass: string;
+    links: {
+      youtube?: string;
+      bandcamp?: string;
+      soundcloud?: string;
+      spotify?: string;
+      appleMusic?: string;
+    };
+  }
+
+  const albums: Album[] = [
+    {
+      title: "CATCH22",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/catch22_cover_art.jpg",
+      tabOption: TabOption.CATCH22,
+      hoverColorClass: "text-blue-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "ARIZONA",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/ARIZONA.jpg",
+      tabOption: TabOption.ARIZONA,
+      hoverColorClass: "text-red-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "ABOUTIME",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/aboutime.jpg",
+      tabOption: TabOption.ABOUTIME,
+      displayType: "Lo-Fi Sessions",
+      hoverColorClass: "text-slate-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "Goldn Mnky",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/golden_monkey.jpg",
+      tabOption: TabOption.GOLDN_MNKY,
+      displayType: "Demos",
+      hoverColorClass: "text-[#7b6f58]",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "POSER",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/poser.jpg",
+      tabOption: TabOption.POSER,
+      displayType: "Demos",
+      hoverColorClass: "text-gray-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "QUIET",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/quiet2_compressed.jpg",
+      tabOption: TabOption.QUIET,
+      hoverColorClass: "text-gray-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "Sixty9",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/sixty9_compressed.jpg",
+      tabOption: TabOption.SIXTY9,
+      hoverColorClass: "text-pink-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "KALIDESKOPE",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/kalideskope_compressed.jpg",
+      tabOption: TabOption.KALIDESKOPE,
+      hoverColorClass: "text-cyan-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "RWYA",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/rwya_compressed.jpg",
+      tabOption: TabOption.RWYA,
+      hoverColorClass: "text-teal-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "JOVE",
+      releaseDate: "2025",
+      producer: "",
+      imageUrl: "/assets/jove.jpg",
+      tabOption: TabOption.JOVE,
+      hoverColorClass: "text-indigo-700",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "KATLYST",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/KATLYST-cover-2024.png",
+      tabOption: TabOption.KATLYST,
+      hoverColorClass: "text-purple-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "DISTORTED",
+      releaseDate: "2024",
+      producer: "",
+      imageUrl: "/assets/DISTORTED.jpg",
+      tabOption: TabOption.DISTORTED,
+      hoverColorClass: "text-orange-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "TIX",
+      releaseDate: "2025",
+      producer: "",
+      imageUrl: "/assets/tix.jpg",
+      tabOption: TabOption.TIX,
+      hoverColorClass: "text-teal-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+  ];
 
   const renderContent = () => {
     switch (activeTab) {
@@ -251,161 +468,44 @@ Shot on location in various desert environments, these visuals capture the raw b
 
             {/* Music Albums Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
-              {/* CATCH22 Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.CATCH22)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
-                  <img src="/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-blue-600 transition-colors">CATCH22</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
+              {albums.map((album) => {
+                const hoverColorMap: Record<string, string> = {
+                  "text-blue-600": "#2563eb",
+                  "text-red-600": "#dc2626",
+                  "text-slate-600": "#475569",
+                  "text-[#7b6f58]": "#7b6f58",
+                  "text-gray-600": "#4b5563",
+                  "text-pink-600": "#db2777",
+                  "text-cyan-600": "#0891b2",
+                  "text-teal-600": "#0d9488",
+                  "text-indigo-700": "#4c1d95",
+                  "text-purple-600": "#9333ea",
+                  "text-orange-600": "#ea580c",
+                };
+                const hoverColor = hoverColorMap[album.hoverColorClass] || "#000";
 
-              {/* ARIZONA Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.ARIZONA)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/ARIZONA.jpg" alt="ARIZONA cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-red-600 transition-colors">ARIZONA</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* ABOUTIME Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.ABOUTIME)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/aboutime.jpg" alt="ABOUTIME cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-slate-600 transition-colors">ABOUTIME</h3>
-                <p className="text-gray-600 text-sm">Lo-Fi Sessions • 2024</p>
-              </div>
-
-              {/* Goldn Mnky Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.GOLDN_MNKY)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/golden_monkey.jpg" alt="Goldn Mnky cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-[#7b6f58] transition-colors">Goldn Mnky</h3>
-                <p className="text-gray-600 text-sm">Demos • 2024</p>
-              </div>
-
-              {/* POSER Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.POSER)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">POSER</h3>
-                <p className="text-gray-600 text-sm">Demos • 2024</p>
-              </div>
-
-              {/* QUIET Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.QUIET)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">QUIET</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* Sixty9 Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.SIXTY9)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-pink-600 transition-colors">Sixty9</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* KALIDESKOPE Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.KALIDESKOPE)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-cyan-600 transition-colors">KALIDESKOPE</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* RWYA Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.RWYA)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">RWYA</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* JOVE Album Card */}
-              <div onClick={() => onTabChange(TabOption.JOVE)}
-                className="cursor-default group transition-transform duration-300 hover:scale-105">
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-indigo-700 transition-colors">JOVE</h3>
-                <p className="text-gray-600 text-sm">2025</p>
-              </div>
-
-              {/* KATLYST Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.KATLYST)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-purple-600 transition-colors">KATLYST</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* DISTORTED Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.DISTORTED)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-orange-600 transition-colors">DISTORTED</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-
-
-              {/* TIX Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.TIX)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">TIX</h3>
-                <p className="text-gray-600 text-sm">2025</p>
-              </div>
+                return (
+                  <div
+                    key={album.title}
+                    onClick={() => onTabChange(album.tabOption)}
+                    className={`group transition-transform duration-300 hover:scale-105 ${album.tabOption === TabOption.JOVE ? 'cursor-default' : 'cursor-pointer'}`}
+                  >
+                    <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
+                      <img src={album.imageUrl} alt={`${album.title} cover art`} className="w-full h-full object-cover" />
+                    </div>
+                    <h3 
+                      className="text-xl font-bold text-black transition-colors"
+                      onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'black')}
+                    >
+                      {album.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {album.displayType ? `${album.displayType} • ${album.releaseDate}` : album.releaseDate}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         );
