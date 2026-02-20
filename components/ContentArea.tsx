@@ -119,7 +119,7 @@ Shot on location in various desert environments, these visuals capture the raw b
   const albums: Album[] = [
     {
       title: "CATCH22",
-      releaseDate: "2024",
+      releaseDate: "2022",
       producer: "",
       imageUrl: "/assets/catch22_cover_art.jpg",
       tabOption: TabOption.CATCH22,
@@ -134,8 +134,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "ARIZONA",
-      releaseDate: "2024",
-      producer: "",
+      releaseDate: "2021",
+      producer: "Amplified",
       imageUrl: "/assets/ARIZONA.jpg",
       tabOption: TabOption.ARIZONA,
       hoverColorClass: "text-red-600",
@@ -150,10 +150,10 @@ Shot on location in various desert environments, these visuals capture the raw b
     {
       title: "ABOUTIME",
       releaseDate: "2024",
-      producer: "",
+      producer: "byeblackboy",
       imageUrl: "/assets/aboutime.jpg",
       tabOption: TabOption.ABOUTIME,
-      displayType: "Lo-Fi Sessions",
+      displayType: "Tape",
       hoverColorClass: "text-slate-600",
       links: {
         youtube: "",
@@ -165,11 +165,11 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "Goldn Mnky",
-      releaseDate: "2024",
-      producer: "",
+      releaseDate: "2025",
+      producer: "byeblackboy",
       imageUrl: "/assets/golden_monkey.jpg",
       tabOption: TabOption.GOLDN_MNKY,
-      displayType: "Demos",
+      displayType: "Tape",
       hoverColorClass: "text-[#7b6f58]",
       links: {
         youtube: "",
@@ -181,8 +181,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "POSER",
-      releaseDate: "2024",
-      producer: "",
+      releaseDate: "2025",
+      producer: "CRCL",
       imageUrl: "/assets/poser.jpg",
       tabOption: TabOption.POSER,
       displayType: "Demos",
@@ -197,8 +197,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "QUIET",
-      releaseDate: "2024",
-      producer: "",
+      releaseDate: "2021",
+      producer: "byeblackboy",
       imageUrl: "/assets/quiet2_compressed.jpg",
       tabOption: TabOption.QUIET,
       hoverColorClass: "text-gray-600",
@@ -212,8 +212,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "Sixty9",
-      releaseDate: "2024",
-      producer: "",
+      releaseDate: "2023",
+      producer: "byeblackboy",
       imageUrl: "/assets/sixty9_compressed.jpg",
       tabOption: TabOption.SIXTY9,
       hoverColorClass: "text-pink-600",
@@ -227,8 +227,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "KALIDESKOPE",
-      releaseDate: "2024",
-      producer: "",
+      releaseDate: "2023",
+      producer: "Lenny Keys",
       imageUrl: "/assets/kalideskope_compressed.jpg",
       tabOption: TabOption.KALIDESKOPE,
       hoverColorClass: "text-cyan-600",
@@ -242,8 +242,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "RWYA",
-      releaseDate: "2024",
-      producer: "",
+      releaseDate: "2022",
+      producer: "Budgie",
       imageUrl: "/assets/rwya_compressed.jpg",
       tabOption: TabOption.RWYA,
       hoverColorClass: "text-teal-600",
@@ -258,7 +258,7 @@ Shot on location in various desert environments, these visuals capture the raw b
     {
       title: "JOVE",
       releaseDate: "2025",
-      producer: "",
+      producer: "byeblackboy",
       imageUrl: "/assets/jove.jpg",
       tabOption: TabOption.JOVE,
       hoverColorClass: "text-indigo-700",
@@ -273,7 +273,7 @@ Shot on location in various desert environments, these visuals capture the raw b
     {
       title: "KATLYST",
       releaseDate: "2024",
-      producer: "",
+      producer: "Kulture",
       imageUrl: "/assets/KATLYST-cover-2024.png",
       tabOption: TabOption.KATLYST,
       hoverColorClass: "text-purple-600",
@@ -288,7 +288,7 @@ Shot on location in various desert environments, these visuals capture the raw b
     {
       title: "DISTORTED",
       releaseDate: "2024",
-      producer: "",
+      producer: "byeblackboy",
       imageUrl: "/assets/DISTORTED.jpg",
       tabOption: TabOption.DISTORTED,
       hoverColorClass: "text-orange-600",
@@ -302,8 +302,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     },
     {
       title: "TIX",
-      releaseDate: "2025",
-      producer: "",
+      releaseDate: "2026",
+      producer: "9th Wonder",
       imageUrl: "/assets/tix.jpg",
       tabOption: TabOption.TIX,
       hoverColorClass: "text-teal-600",
@@ -449,10 +449,16 @@ Shot on location in various desert environments, these visuals capture the raw b
               </div>
 
               <div className="space-y-6">
-                <div className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
-                  <h3 className="text-2xl font-semibold mb-2">Blog</h3>
-                  <div className="text-sm text-black mb-4">Posts are hidden.</div>
-                </div>
+                {blogs.map((blog) => (
+                  <div key={blog.id} className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
+                    <h3 className="text-2xl font-semibold mb-2">{blog.title}</h3>
+                    <div className="text-xs text-gray-500 mb-4">
+                      {blog.date} • by {blog.author}
+                    </div>
+                    <p className="text-sm text-black mb-4">{blog.excerpt}</p>
+                    <div className="text-sm text-black whitespace-pre-wrap">{blog.content}</div>
+                  </div>
+                ))}
               </div>
 
             </div>

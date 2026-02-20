@@ -41,7 +41,6 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
             TabOption.BLOG,
             TabOption.ABOUT,
             TabOption.ARTIST,
-            TabOption.SHOWS,
             TabOption.VISUALS,
             TabOption.SUPPORT,
           ].map((tab) => {
