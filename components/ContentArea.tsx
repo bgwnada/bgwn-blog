@@ -1065,11 +1065,9 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">POSER</h2>
-
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full flex items-center justify-center">
-                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
+                  <div className="relative w-full">
                     <img src="/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -1111,15 +1109,16 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-3xl mx-auto">
+                <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full object-cover" />
               </div>
             </div>
 
-            {/* YouTube Shorts Embeds */}
+            {/* YouTube Shorts Embeds  */}
             <div className="p-8">
-              <h3 className="text-2xl font-bold text-black mb-6 text-center">QUIET Videos</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="max-w-5xl mx-auto">
+                <h3 className="text-2xl font-bold text-black mb-6 text-center">QUIET Videos</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   'UwZAqr96iFI',
                   'vke_tD6RRjc',
@@ -1141,6 +1140,74 @@ Shot on location in various desert environments, these visuals capture the raw b
                     ></iframe>
                   </div>
                 ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="relative w-full flex justify-center">
+              <div className="w-full max-w-3xl mx-auto flex flex-col items-center">
+                <img src="https://f4.bcbits.com/img/a0768902466_16.jpg" alt="QUIET cover art" className="w-full max-w-lg object-cover mb-3" />
+
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1037981512/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - All In from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/all-in-from-quiet-instrumental">All In from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1524503671/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - Climbing Mtns from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/climbing-mtns-from-quiet-instrumental">Climbing Mtns from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1156752109/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - Ready 2 Go from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/ready-2-go-from-quiet-instrumental">Ready 2 Go from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=3440810742/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - Thirty7 from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/thirty7-from-quiet-instrumental">Thirty7 from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1402128241/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - To The Sky from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/to-the-sky-from-quiet-instrumental">To The Sky from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=2324495121/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - The Way Out from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/the-way-out-from-quiet-instrumental">The Way Out from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
               </div>
             </div>
           </>
