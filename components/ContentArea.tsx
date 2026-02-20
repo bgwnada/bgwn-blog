@@ -474,7 +474,7 @@ Shot on location in various desert environments, these visuals capture the raw b
 
             {/* Music Albums Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
-              {albums.map((album) => {
+              {[...albums].sort((a, b) => parseInt(a.releaseDate) - parseInt(b.releaseDate)).map((album) => {
                 const hoverColorMap: Record<string, string> = {
                   "text-blue-600": "#2563eb",
                   "text-red-600": "#dc2626",
@@ -1028,6 +1028,16 @@ Shot on location in various desert environments, these visuals capture the raw b
               </a>
             </div>
 
+            {/* Catch22 Horizontal Image */}
+            <div className="flex justify-center mb-6 px-8">
+              <img src="/assets/catch22/catch_hor.jpg" alt="CATCH22 artwork" className="w-full max-w-2xl rounded-lg" />
+            </div>
+
+            {/* Catch22 Multi Image */}
+            <div className="flex justify-center mb-6 px-8">
+              <img src="/assets/catch22/CATCH_MULTI.jpg" alt="CATCH22 multi artwork" className="w-full max-w-2xl rounded-lg" />
+            </div>
+
             {/* Video Player Footer - Catch22 */}
             {/* SoundCloud Embed for CATCH22 */}
             <div className="p-8">
@@ -1205,18 +1215,13 @@ Shot on location in various desert environments, these visuals capture the raw b
           </>
         );
 
-
       case TabOption.JOVE:
         return (
           <>
             <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">JOVE</h2>
-
               <div className="items-start md:items-stretch gap-8">
-                <div className="w-full flex items-center justify-center">
-                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
-                  </div>
+                <div className="w-full">
+                  <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full object-cover rounded-md shadow-md" />
                 </div>
 
                 <div className="w-full">
@@ -1297,8 +1302,6 @@ Shot on location in various desert environments, these visuals capture the raw b
                 </div>
 
                 <div className="w-full md:w-1/2">
-                  <h2 className="text-4xl font-bold text-black mb-6">Goldn Mnky</h2>
-
                   <div className="mb-6">
                     <iframe
                       title="SoundCloud - Golden Monkey [demos]"
@@ -1318,6 +1321,18 @@ Shot on location in various desert environments, these visuals capture the raw b
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Goldn Mnky Additional Images */}
+            <div className="w-full mt-6">
+              <div className="">
+                <img src="/assets/goldnmonky/back_cover.jpg" alt="Goldn Mnky back cover" className="w-full object-cover rounded-md shadow-md" />
+                <p className="text-center text-sm text-white">back cover with tracklist</p>
+                <img src="/assets/goldnmonky/extra_cover.jpg" alt="Goldn Mnky extra cover" className="w-full object-cover rounded-md shadow-md" />
+                <p className="text-center text-sm text-white">extra cover artwork</p>
+                <img src="/assets/goldnmonky/gold_front.jpg" alt="Goldn Mnky gold front" className="w-full object-cover rounded-md shadow-md" />
+                <p className="text-center text-sm text-white">gold front cover</p>
               </div>
             </div>
           </>
@@ -1388,6 +1403,11 @@ Shot on location in various desert environments, these visuals capture the raw b
                     className="w-full rounded-lg"
                   ></iframe>
                 </div>
+                <div className="grid grid-cols-3 gap-4 mt-4">
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full rounded-lg" />
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full rounded-lg" />
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full rounded-lg" />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                   <iframe
                     width="560"
@@ -1435,6 +1455,9 @@ Shot on location in various desert environments, these visuals capture the raw b
                     allowFullScreen
                     className="w-full rounded-lg"
                   ></iframe>
+                </div>
+                <div className="flex justify-center mt-4">
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full max-w-md rounded-lg" />
                 </div>
               </div>
             </div>
