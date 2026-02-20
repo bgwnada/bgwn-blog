@@ -1253,6 +1253,19 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
+              <div className="mb-6">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/ENUgXwB96n4?si=dH7m9RoKPU596rN6"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="w-full rounded-lg"
+                ></iframe>
+              </div>
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full">
                   <div className="mb-6">
