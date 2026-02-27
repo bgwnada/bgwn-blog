@@ -1,5 +1,5 @@
-import React from 'react';
-import { Lock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Lock, Menu, X } from 'lucide-react';
 import { TabOption } from '../types';
 
 interface TopBarProps {
@@ -8,6 +8,8 @@ interface TopBarProps {
 }
 
 const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const musicTabs = [
     TabOption.CATCH22,
     TabOption.ARIZONA,
@@ -26,6 +28,21 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
 
   const showInternalTabs = musicTabs.includes(activeTab) || activeTab === TabOption.MUSIC;
 
+  const navItems = [
+    TabOption.HOME,
+    TabOption.MUSIC,
+    TabOption.BLOG,
+    TabOption.ABOUT,
+    TabOption.ARTIST,
+    TabOption.VISUALS,
+    TabOption.SUPPORT,
+  ];
+
+  const handleNavClick = (tab: TabOption) => {
+    onTabChange(tab);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className="w-full max-w-6xl mx-auto mb-6 bg-black/95 border border-white/5 rounded-md shadow-md text-gray-200 text-sm p-3 z-20 relative">
       <div className="flex items-center justify-between gap-4">
@@ -34,17 +51,9 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
           <span className="text-gray-400 font-mono text-xs md:text-sm">bgwn.net</span>
         </div>
 
-        <nav className="flex-1 flex items-center justify-center gap-3 flex-wrap">
-          {[
-            TabOption.HOME,
-            TabOption.MUSIC,
-            TabOption.BLOG,
-            TabOption.ABOUT,
-            TabOption.ARTIST,
-            TabOption.SHOWS,
-            TabOption.VISUALS,
-            TabOption.SUPPORT,
-          ].map((tab) => {
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex flex-1 items-center justify-center gap-3">
+          {navItems.map((tab) => {
             const isActive = activeTab === tab || (tab === TabOption.MUSIC && musicTabs.includes(activeTab));
             return (
               <button
@@ -59,8 +68,35 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
           })}
         </nav>
 
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden p-2 hover:bg-white/10 rounded-sm transition-colors"
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+
         <img src="/assets/bgwn_png3_logo.png" alt="bgwn logo" className="w-16 h-auto hidden md:block" />
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden mt-4 pt-4 border-t border-white/10 space-y-2">
+          {navItems.map((tab) => {
+            const isActive = activeTab === tab || (tab === TabOption.MUSIC && musicTabs.includes(activeTab));
+            return (
+              <button
+                key={tab}
+                onClick={() => handleNavClick(tab)}
+                className={`block w-full text-left px-4 py-2 rounded-sm text-sm font-semibold transition-colors duration-150 ${isActive ? 'bg-white text-black' : 'text-gray-300 hover:bg-white/10'}`}
+              >
+                {tab}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {showInternalTabs && (
         <div className="mt-2 flex gap-2 items-center justify-center flex-wrap">

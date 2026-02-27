@@ -99,6 +99,223 @@ Shot on location in various desert environments, these visuals capture the raw b
     setTimeout(() => setIsLogoAnimating(false), 2000);
   };
 
+  interface Album {
+    title: string;
+    releaseDate: string;
+    producer: string;
+    imageUrl: string;
+    tabOption: TabOption;
+    displayType?: string;
+    hoverColorClass: string;
+    links: {
+      youtube?: string;
+      bandcamp?: string;
+      soundcloud?: string;
+      spotify?: string;
+      appleMusic?: string;
+    };
+  }
+
+  const albums: Album[] = [
+    {
+      title: "CATCH22",
+      releaseDate: "2022",
+      producer: "",
+      imageUrl: "/assets/catch22_cover_art.jpg",
+      tabOption: TabOption.CATCH22,
+      hoverColorClass: "text-blue-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "ARIZONA",
+      releaseDate: "2021",
+      producer: "Amplified",
+      imageUrl: "/assets/ARIZONA.jpg",
+      tabOption: TabOption.ARIZONA,
+      hoverColorClass: "text-red-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "ABOUTIME",
+      releaseDate: "2024",
+      producer: "byeblackboy",
+      imageUrl: "/assets/aboutime.jpg",
+      tabOption: TabOption.ABOUTIME,
+      displayType: "Tape",
+      hoverColorClass: "text-slate-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "Goldn Mnky",
+      releaseDate: "2025",
+      producer: "byeblackboy",
+      imageUrl: "/assets/golden_monkey.jpg",
+      tabOption: TabOption.GOLDN_MNKY,
+      displayType: "Tape",
+      hoverColorClass: "text-[#7b6f58]",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "POSER",
+      releaseDate: "2025",
+      producer: "CRCL",
+      imageUrl: "/assets/poser.jpg",
+      tabOption: TabOption.POSER,
+      displayType: "Demos",
+      hoverColorClass: "text-gray-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "QUIET",
+      releaseDate: "2021",
+      producer: "byeblackboy",
+      imageUrl: "/assets/quiet2_compressed.jpg",
+      tabOption: TabOption.QUIET,
+      hoverColorClass: "text-gray-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "Sixty9",
+      releaseDate: "2023",
+      producer: "byeblackboy",
+      imageUrl: "/assets/sixty9_compressed.jpg",
+      tabOption: TabOption.SIXTY9,
+      hoverColorClass: "text-pink-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "KALIDESKOPE",
+      releaseDate: "2023",
+      producer: "Lenny Keys",
+      imageUrl: "/assets/kalideskope_compressed.jpg",
+      tabOption: TabOption.KALIDESKOPE,
+      hoverColorClass: "text-cyan-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "RWYA",
+      releaseDate: "2022",
+      producer: "Budgie",
+      imageUrl: "/assets/rwya_compressed.jpg",
+      tabOption: TabOption.RWYA,
+      hoverColorClass: "text-teal-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "JOVE",
+      releaseDate: "2025",
+      producer: "byeblackboy",
+      imageUrl: "/assets/jove.jpg",
+      tabOption: TabOption.JOVE,
+      hoverColorClass: "text-indigo-700",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "KATLYST",
+      releaseDate: "2024",
+      producer: "Kulture",
+      imageUrl: "/assets/KATLYST-cover-2024.png",
+      tabOption: TabOption.KATLYST,
+      hoverColorClass: "text-purple-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "DISTORTED",
+      releaseDate: "2024",
+      producer: "byeblackboy",
+      imageUrl: "/assets/DISTORTED.jpg",
+      tabOption: TabOption.DISTORTED,
+      hoverColorClass: "text-orange-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+    {
+      title: "TIX",
+      releaseDate: "2026",
+      producer: "9th Wonder",
+      imageUrl: "/assets/tix.jpg",
+      tabOption: TabOption.TIX,
+      hoverColorClass: "text-teal-600",
+      links: {
+        youtube: "",
+        bandcamp: "",
+        soundcloud: "",
+        spotify: "",
+        appleMusic: "",
+      },
+    },
+  ];
 
   const renderContent = () => {
     switch (activeTab) {
@@ -161,18 +378,18 @@ Shot on location in various desert environments, these visuals capture the raw b
               <div className="bg-black/20 p-10 md:p-14 rounded-xl backdrop-blur-md border border-white/10 shadow-2xl">
                 <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4 mb-6">About Us</h2>
                 <div className="prose prose-invert prose-lg">
-                  <p>bgwn is the philosphy of for a man of rock bottom. </p> <br /> 
+                  <p>bgwn is the philosphy of for a man of rock bottom. </p> <br />
 
                   <p>It is the ethos of creating greatness from nothing. <br /> <br />
-                  It is the collective of artists, creators and agitators who believe <i>nothing</i> can stop them.</p>
+                    It is the collective of artists, creators and agitators who believe <i>nothing</i> can stop them.</p>
 
                   <p>Founded from the brain and experience of invasive mastermind, bgwn stands for <b>BE GREAT WITH NOTHING</b></p> <br />
 
                   <p>As a realist, Mr. Mastermind asks: what if you had nothing? What if you had no money, no connections, no resources? What if you were born with nothing and had to create everything from scratch? <br /> <br />
-                  What if the point was to begin without. To enter the voide and become devoid of emotion, struggle, pain and transmute it all into LOVE</p> <br />
+                    What if the point was to begin without. To enter the voide and become devoid of emotion, struggle, pain and transmute it all into LOVE</p> <br />
 
                   <p>Mr. Mastermind has found his true greatness in nothing, in boredom, in solidarity. <i>Now get this... WE ARE NOT <br /> <br />
-                  HENRY DAVID THOREAU SUGGESTING YOU LEAVE HOME AND BUILD A SHACK ON YOUR FRIENDS LAWN.</i> Trust me, I tried.</p> <br />
+                    HENRY DAVID THOREAU SUGGESTING YOU LEAVE HOME AND BUILD A SHACK ON YOUR FRIENDS LAWN.</i> Trust me, I tried.</p> <br />
 
                   <p>BGWN is here as a guiding post, an arrow on the trail, and frame of mind to <u>keep</u> the BACKSTEPPERS, the forward thinkers, the distracted aligned.</p> <br />
 
@@ -232,12 +449,18 @@ Shot on location in various desert environments, these visuals capture the raw b
               </div>
 
               <div className="space-y-6">
-                <div className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
-                  <h3 className="text-2xl font-semibold mb-2">Blog</h3>
-                  <div className="text-sm text-black mb-4">Posts are hidden.</div>
-                </div>
+                {blogs.map((blog) => (
+                  <div key={blog.id} className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
+                    <h3 className="text-2xl font-semibold mb-2">{blog.title}</h3>
+                    <div className="text-xs text-gray-500 mb-4">
+                      {blog.date} • by {blog.author}
+                    </div>
+                    <p className="text-sm text-black mb-4">{blog.excerpt}</p>
+                    <div className="text-sm text-black whitespace-pre-wrap">{blog.content}</div>
+                  </div>
+                ))}
               </div>
-              
+
             </div>
           </div>
         );
@@ -251,161 +474,44 @@ Shot on location in various desert environments, these visuals capture the raw b
 
             {/* Music Albums Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
-              {/* CATCH22 Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.CATCH22)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
-                  <img src="/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-blue-600 transition-colors">CATCH22</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
+              {[...albums].sort((a, b) => parseInt(a.releaseDate) - parseInt(b.releaseDate)).map((album) => {
+                const hoverColorMap: Record<string, string> = {
+                  "text-blue-600": "#2563eb",
+                  "text-red-600": "#dc2626",
+                  "text-slate-600": "#475569",
+                  "text-[#7b6f58]": "#7b6f58",
+                  "text-gray-600": "#4b5563",
+                  "text-pink-600": "#db2777",
+                  "text-cyan-600": "#0891b2",
+                  "text-teal-600": "#0d9488",
+                  "text-indigo-700": "#4c1d95",
+                  "text-purple-600": "#9333ea",
+                  "text-orange-600": "#ea580c",
+                };
+                const hoverColor = hoverColorMap[album.hoverColorClass] || "#000";
 
-              {/* ARIZONA Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.ARIZONA)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/ARIZONA.jpg" alt="ARIZONA cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-red-600 transition-colors">ARIZONA</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* ABOUTIME Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.ABOUTIME)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/aboutime.jpg" alt="ABOUTIME cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-slate-600 transition-colors">ABOUTIME</h3>
-                <p className="text-gray-600 text-sm">Lo-Fi Sessions • 2024</p>
-              </div>
-
-              {/* Goldn Mnky Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.GOLDN_MNKY)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/golden_monkey.jpg" alt="Goldn Mnky cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-[#7b6f58] transition-colors">Goldn Mnky</h3>
-                <p className="text-gray-600 text-sm">Demos • 2024</p>
-              </div>
-
-              {/* POSER Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.POSER)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">POSER</h3>
-                <p className="text-gray-600 text-sm">Demos • 2024</p>
-              </div>
-
-              {/* QUIET Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.QUIET)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">QUIET</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* Sixty9 Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.SIXTY9)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-pink-600 transition-colors">Sixty9</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* KALIDESKOPE Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.KALIDESKOPE)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-cyan-600 transition-colors">KALIDESKOPE</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* RWYA Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.RWYA)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">RWYA</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* JOVE Album Card */}
-              <div onClick={() => onTabChange(TabOption.JOVE)} 
-              className="cursor-default group transition-transform duration-300 hover:scale-105">
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-indigo-700 transition-colors">JOVE</h3>
-                <p className="text-gray-600 text-sm">2025</p>
-              </div>
-
-              {/* KATLYST Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.KATLYST)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-purple-600 transition-colors">KATLYST</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              {/* DISTORTED Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.DISTORTED)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-orange-600 transition-colors">DISTORTED</h3>
-                <p className="text-gray-600 text-sm">2024</p>
-              </div>
-
-              
-
-              {/* TIX Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.TIX)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">TIX</h3>
-                <p className="text-gray-600 text-sm">2025</p>
-              </div>
+                return (
+                  <div
+                    key={album.title}
+                    onClick={() => onTabChange(album.tabOption)}
+                    className={`group transition-transform duration-300 hover:scale-105 ${album.tabOption === TabOption.JOVE ? 'cursor-default' : 'cursor-pointer'}`}
+                  >
+                    <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
+                      <img src={album.imageUrl} alt={`${album.title} cover art`} className="w-full h-full object-cover" />
+                    </div>
+                    <h3
+                      className="text-xl font-bold text-black transition-colors"
+                      onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'black')}
+                    >
+                      {album.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {album.displayType ? `${album.displayType} • ${album.releaseDate}` : album.releaseDate}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         );
@@ -430,7 +536,7 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <div className="p-8 h-full overflow-y-auto">
             <h2 className="text-3xl font-bold text-black mb-6 border-b border-white/10 pb-4">Support</h2>
-            
+
             {/* Support Artists Section */}
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-black mb-4">Support These Artists</h3>
@@ -438,8 +544,53 @@ Shot on location in various desert environments, these visuals capture the raw b
                 {[{
                   name: 'Mars Togaia',
                   desc: 'Alternative Neo-Soul / Pop',
-                  donate: '#',
-                  blurb: "Atlanta local and native, Mars takes her performance energy to the booth to sooth your soul."
+                  img: '/assets/mars.jpg',
+                  donate: null,
+                  spotify: 'https://open.spotify.com/artist/6dNE6iWNQtc1Z8DDAtU8yQ',
+                  hideCTAs: true,
+                  blurb: "Atlanta local and native, Mars takes her performance energy to the booth to sooth your soul.",
+                  recentRelease: {
+                    title: "Scorpionic",
+                    link: "https://www.youtube.com/watch?v=gIU-aganx_c",
+                    date: "2022-11-11",
+                    cover: "/assets/releases/scorp.jpg",
+                    type: "single",
+                    platform: "Youtube"
+                  }
+                }, {
+                  name: 'P9 the Hieroglyph',
+                  desc: 'Neo Hip Hop / RnB',
+                  href: 'https://www.instagram.com/pherow9/',
+                  img: '/assets/pherow.jpg',
+                  hideCTAs: true,
+                  donate: null,
+                  spotify: "https://www.youtube.com/channel/UCMRIKpnPX6SWCYhs5r_ox0g",
+                  blurb: "P9 the Hieroglyph is a multi-talented artist hailing from the vibrant city of Atlanta, Georgia. With a unique blend of neo hip-hop and RnB, P9 crafts music that resonates deeply with listeners.",
+                  recentRelease: {
+                    title: "Love No Mo",
+                    link: "https://www.youtube.com/watch?v=-nhyB9vu_fE",
+                    date: "2026-02-15",
+                    cover: "/assets/releases/lovenomo.jpg",
+                    type: "single",
+                    platform: "Youtube"
+                  }
+                }, {
+                  name: 'Brutha War',
+                  desc: 'Christian Hip Hop / Rap',
+                  href: 'https://www.instagram.com/bruthawar/',
+                  img: '/assets/brutha.jpg',
+                  spotify: 'https://open.spotify.com/artist/7n2wXPK2f2rjwzmOhEbIBE',
+                  blurb: "Brutha War is a Christian hip-hop artist based in Atlanta, Georgia hailing and repping the West Coast proudly. He pushesPowerful TRUTH MUSIC, CRAZY true stories, & INSPIRATIONAL messages!",
+                  hideCTAs: true,
+                  donate: null,
+                  recentRelease: {
+                    title: "Hush",
+                    link: "https://www.youtube.com/watch?v=TdAw6bDkmNQ",
+                    date: "2026-02-12",
+                    cover: "/assets/releases/hush.jpg",
+                    type: "single",
+                    platform: "Youtube"
+                  }
                 }].map((artist) => (
                   <div key={artist.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex flex-col">
                     <div className="flex items-center justify-between mb-4">
@@ -447,13 +598,42 @@ Shot on location in various desert environments, these visuals capture the raw b
                         <h3 className="text-xl font-bold text-white">{artist.name}</h3>
                         <div className="text-sm text-gray-400">{artist.desc}</div>
                       </div>
-                      <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-black font-bold">{artist.name.split('')[0]}</div>
+                      <img src={artist.img || '/assets/profile.jpg'} alt={`${artist.name} profile`} className="w-16 h-16 rounded-full object-cover" />
                     </div>
-                    <p className="text-sm text-white mb-4">You can support this artist by buying merch, streaming, or donating directly.</p>
                     {artist.blurb && <p className="text-sm text-gray-200 mb-4">{artist.blurb}</p>}
+
+                    <div className="text-sm text-gray-200 mb-4">
+                      <div className="font-semibold text-white mb-1">Recent Release</div>
+                      {artist.recentRelease ? (
+                        <div className="flex items-center gap-4">
+                          {artist.recentRelease.link ? (
+                            <a href={artist.recentRelease.link} target="_blank" rel="noreferrer" className="text-white underline">{artist.recentRelease.title || "" || 'View Release'}</a>
+                          ) : (
+                            <div className="text-white">{artist.recentRelease.title || ""}</div>
+                          )}
+                          {artist.recentRelease.date && <div className="text-xs text-gray-400">{artist.recentRelease.date}</div>}
+                          <a href={artist.recentRelease.link} target="_blank" rel="noreferrer" className="">
+                            <img src={artist.recentRelease.cover || '/assets/profile.jpg'} alt={`${artist.recentRelease.title} profile`} className="w-30 h-16" />
+                          </a>
+                        </div>
+                      ) : (
+                        <div className="text-gray-400">No recent release listed</div>
+                      )}
+                    </div>
+
                     <div className="mt-auto flex gap-2">
-                      <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
-                      <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
+                      {!artist.hideCTAs && artist.donate && (
+                        <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
+                      )}
+                      {!artist.hideCTAs && (
+                        <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
+                      )}
+                      {!artist.hideCTAs && artist.href && (
+                        <a href={artist.href} target="_blank" rel="noreferrer" className="px-4 py-2 bg-white text-black rounded-md text-sm font-bold">Visit</a>
+                      )}
+                      {artist.spotify && (
+                        <a href={artist.spotify} target="_blank" rel="noreferrer" className="px-4 py-2 bg-[#1DB954] hover:bg-[#17a84a] text-black rounded-md text-sm font-bold">Listen</a>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -472,9 +652,9 @@ Shot on location in various desert environments, these visuals capture the raw b
                 }].map((biz) => (
                   <div key={biz.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex items-center justify-between">
                     <div>
-                      <h3 className="text-lg font-bold text-black">{biz.name}</h3>
-                      <div className="text-sm text-gray-400">{biz.city}</div>
-                      {biz.blurb && <div className="text-sm text-gray-400 mt-2">{biz.blurb}</div>}
+                      <h3 className="text-lg font-bold text-white">{biz.name}</h3>
+                      <div className="text-sm text-white">{biz.city}</div>
+                      {biz.blurb && <div className="text-sm text-white mt-2">{biz.blurb}</div>}
                     </div>
                     <div className="flex items-center gap-3">
                       <a href={biz.href} target="_blank" rel="noreferrer" className="px-3 py-2 bg-white text-black rounded font-bold text-sm">Visit</a>
@@ -848,6 +1028,16 @@ Shot on location in various desert environments, these visuals capture the raw b
               </a>
             </div>
 
+            {/* Catch22 Horizontal Image */}
+            <div className="flex justify-center mb-6 px-8">
+              <img src="/assets/catch22/catch_hor.jpg" alt="CATCH22 artwork" className="w-full max-w-2xl rounded-lg" />
+            </div>
+
+            {/* Catch22 Multi Image */}
+            <div className="flex justify-center mb-6 px-8">
+              <img src="/assets/catch22/CATCH_MULTI.jpg" alt="CATCH22 multi artwork" className="w-full max-w-2xl rounded-lg" />
+            </div>
+
             {/* Video Player Footer - Catch22 */}
             {/* SoundCloud Embed for CATCH22 */}
             <div className="p-8">
@@ -875,11 +1065,9 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">POSER</h2>
-
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full flex items-center justify-center">
-                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
+                  <div className="relative w-full">
                     <img src="/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -921,15 +1109,16 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-3xl mx-auto">
+                <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full object-cover" />
               </div>
             </div>
 
-            {/* YouTube Shorts Embeds */}
+            {/* YouTube Shorts Embeds  */}
             <div className="p-8">
-              <h3 className="text-2xl font-bold text-black mb-6 text-center">QUIET Videos</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="max-w-5xl mx-auto">
+                <h3 className="text-2xl font-bold text-black mb-6 text-center">QUIET Videos</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   'UwZAqr96iFI',
                   'vke_tD6RRjc',
@@ -951,6 +1140,74 @@ Shot on location in various desert environments, these visuals capture the raw b
                     ></iframe>
                   </div>
                 ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="relative w-full flex justify-center">
+              <div className="w-full max-w-3xl mx-auto flex flex-col items-center">
+                <img src="https://f4.bcbits.com/img/a0768902466_16.jpg" alt="QUIET cover art" className="w-full max-w-lg object-cover mb-3" />
+
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1037981512/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - All In from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/all-in-from-quiet-instrumental">All In from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1524503671/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - Climbing Mtns from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/climbing-mtns-from-quiet-instrumental">Climbing Mtns from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1156752109/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - Ready 2 Go from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/ready-2-go-from-quiet-instrumental">Ready 2 Go from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=3440810742/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - Thirty7 from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/thirty7-from-quiet-instrumental">Thirty7 from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=1402128241/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - To The Sky from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/to-the-sky-from-quiet-instrumental">To The Sky from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
+              <div className="p-8 w-full">
+                <iframe
+                  style={{ border: 0, width: '100%', height: 42 }}
+                  src="https://bandcamp.com/EmbeddedPlayer/track=2324495121/size=small/bgcol=333333/linkcol=ffffff/transparent=true/"
+                  seamless
+                  title="Bandcamp - The Way Out from QUIET (INSTRUMENTAL)"
+                >
+                  <a href="https://byeblackboy.bandcamp.com/track/the-way-out-from-quiet-instrumental">The Way Out from QUIET (INSTRUMENTAL) by byeblackboy</a>
+                </iframe>
+              </div>
               </div>
             </div>
           </>
@@ -996,15 +1253,20 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">DISTORTED</h2>
-
+              <div className="mb-6">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/ENUgXwB96n4?si=dH7m9RoKPU596rN6"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="w-full rounded-lg"
+                ></iframe>
+              </div>
               <div className="items-start md:items-stretch gap-8">
-                <div className="w-full flex items-center justify-center">
-                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-
                 <div className="w-full">
                   <div className="mb-6">
                     <iframe
@@ -1020,23 +1282,113 @@ Shot on location in various desert environments, these visuals capture the raw b
                     ></iframe>
                   </div>
                 </div>
+
+                <div className="w-full">
+                  <img src="https://f4.bcbits.com/img/a2309965665_16.jpg" alt="DISTORTED cover art" className="w-full object-cover rounded-md shadow-md" />
+
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=2130465253/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Guilt Free from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/guilt-free-from-distorted-instrumental">Guilt Free from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=1695886251/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Arapping from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/arapping-from-distorted-instrumental">Arapping from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=1027465228/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Out My Garden from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/out-my-garden-from-distorted-instrumental">Out My Garden from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=2546484067/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - I Remember from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/i-remember-from-distorted-instrumental">I Remember from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=585817453/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Mute from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/mute-from-distorted-instrumental">Mute from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=2844847555/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Greiger from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/greiger-from-distorted-instrumental">Greiger from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=64216054/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Let Go from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/let-go-from-distorted-instrumental">Let Go from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=3163948020/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - ImADreamer from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/imadreamer-from-distorted-instrumental">ImADreamer from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                  <div className="mb-6">
+                    <iframe
+                      style={{ border: 0, width: '100%', height: 120 }}
+                      src="https://bandcamp.com/EmbeddedPlayer/track=3970208486/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                      seamless
+                      title="Bandcamp - Callin' (Outro) from DISTORTED (INSTRUMENTAL)"
+                    >
+                      <a href="https://byeblackboy.bandcamp.com/track/callin-outro-from-distorted-instrumental">Callin' (Outro) from DISTORTED (INSTRUMENTAL) by byeblackboy</a>
+                    </iframe>
+                  </div>
+                </div>
               </div>
             </div>
           </>
         );
 
-    
       case TabOption.JOVE:
         return (
           <>
             <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">JOVE</h2>
-
               <div className="items-start md:items-stretch gap-8">
-                <div className="w-full flex items-center justify-center">
-                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
-                    <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
-                  </div>
+                <div className="w-full">
+                  <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full object-cover rounded-md shadow-md" />
                 </div>
 
                 <div className="w-full">
@@ -1117,8 +1469,6 @@ Shot on location in various desert environments, these visuals capture the raw b
                 </div>
 
                 <div className="w-full md:w-1/2">
-                  <h2 className="text-4xl font-bold text-black mb-6">Goldn Mnky</h2>
-
                   <div className="mb-6">
                     <iframe
                       title="SoundCloud - Golden Monkey [demos]"
@@ -1140,6 +1490,18 @@ Shot on location in various desert environments, these visuals capture the raw b
                 </div>
               </div>
             </div>
+
+            {/* Goldn Mnky Additional Images */}
+            <div className="w-full mt-6">
+              <div className="">
+                <img src="/assets/goldnmonky/back_cover.jpg" alt="Goldn Mnky back cover" className="w-full object-cover rounded-md shadow-md" />
+                <p className="text-center text-sm text-white">back cover with tracklist</p>
+                <img src="/assets/goldnmonky/extra_cover.jpg" alt="Goldn Mnky extra cover" className="w-full object-cover rounded-md shadow-md" />
+                <p className="text-center text-sm text-white">extra cover artwork</p>
+                <img src="/assets/goldnmonky/gold_front.jpg" alt="Goldn Mnky gold front" className="w-full object-cover rounded-md shadow-md" />
+                <p className="text-center text-sm text-white">gold front cover</p>
+              </div>
+            </div>
           </>
         );
 
@@ -1147,7 +1509,7 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
-                  <h2 className="text-4xl font-bold text-black mb-6">ABOUTIME</h2>
+              <h2 className="text-4xl font-bold text-black mb-6">ABOUTIME</h2>
 
               <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8">
                 <div className="w-full md:w-1/2 flex items-center justify-center">
@@ -1208,6 +1570,11 @@ Shot on location in various desert environments, these visuals capture the raw b
                     className="w-full rounded-lg"
                   ></iframe>
                 </div>
+                <div className="grid grid-cols-3 gap-4 mt-4">
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full rounded-lg" />
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full rounded-lg" />
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full rounded-lg" />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                   <iframe
                     width="560"
@@ -1256,6 +1623,9 @@ Shot on location in various desert environments, these visuals capture the raw b
                     className="w-full rounded-lg"
                   ></iframe>
                 </div>
+                <div className="flex justify-center mt-4">
+                  <img src="/assets/az/chrome_az_trans.png" alt="Arizona artwork" className="w-full max-w-md rounded-lg" />
+                </div>
               </div>
             </div>
           </>
@@ -1272,7 +1642,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
               </div>
 
-              
+
             </div>
           </>
         );
