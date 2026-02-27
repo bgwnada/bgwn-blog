@@ -27,6 +27,7 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
   ];
 
   const showInternalTabs = musicTabs.includes(activeTab) || activeTab === TabOption.MUSIC;
+  const disabledMusicTabs = new Set<TabOption>([TabOption.RWYA]);
 
   const navItems = [
     TabOption.HOME,
@@ -100,15 +101,19 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
 
       {showInternalTabs && (
         <div className="mt-2 flex gap-2 items-center justify-center flex-wrap">
-          {musicTabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => onTabChange(tab)}
-              className={`px-2 py-0.5 rounded-full text-xs font-medium transition-all duration-150 ${activeTab === tab ? 'bg-blue-600 text-white shadow' : 'bg-white/5 text-gray-200 hover:bg-white/10'}`}
-            >
-              {tab}
-            </button>
-          ))}
+          {musicTabs.map((tab) => {
+            const isDisabled = disabledMusicTabs.has(tab);
+            return (
+              <button
+                key={tab}
+                onClick={isDisabled ? undefined : () => onTabChange(tab)}
+                disabled={isDisabled}
+                className={`px-2 py-0.5 rounded-full text-xs font-medium transition-all duration-150 ${isDisabled ? 'bg-white/10 text-gray-500 cursor-not-allowed' : activeTab === tab ? 'bg-blue-600 text-white shadow' : 'bg-white/5 text-gray-200 hover:bg-white/10'}`}
+              >
+                {tab}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>

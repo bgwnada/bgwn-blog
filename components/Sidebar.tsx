@@ -9,11 +9,17 @@ interface SidebarProps {
 
 
 
-const ArtistCard: React.FC<ArtistCardProps> = ({ name, color, logoText, subText, onClick }) => (
+const ArtistCard: React.FC<ArtistCardProps> = ({ name, color, logoText, subText, onClick, disabled = false, disabledLabel = 'Disabled' }) => (
   <div 
-    onClick={onClick}
-    className={`w-full p-4 mb-2 rounded-md shadow-sm cursor-pointer transition-transform hover:scale-[1.02] ${color} relative overflow-hidden group`}
+    onClick={disabled ? undefined : onClick}
+    className={`w-full p-4 mb-2 rounded-md shadow-sm transition-transform ${disabled ? 'cursor-not-allowed opacity-70 grayscale' : 'cursor-pointer hover:scale-[1.02]'} ${color} relative overflow-hidden group`}
+    aria-disabled={disabled}
   >
+    {disabled && (
+      <div className="absolute top-2 right-2 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+        {disabledLabel}
+      </div>
+    )}
     <div className="flex justify-between items-center relative z-10">
       <span className="font-bold text-lg text-white drop-shadow-md">{name}</span>
       {logoText && (
@@ -131,7 +137,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
             <ArtistCard
               name="RWYA"
               color="bg-teal-600"
-              onClick={() => handleNavigation(TabOption.RWYA)}
+              disabled
             />
           </div>
         </div>

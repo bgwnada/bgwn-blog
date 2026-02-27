@@ -107,6 +107,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     tabOption: TabOption;
     displayType?: string;
     hoverColorClass: string;
+    disabled?: boolean;
+    disabledLabel?: string;
     links: {
       youtube?: string;
       bandcamp?: string;
@@ -247,6 +249,8 @@ Shot on location in various desert environments, these visuals capture the raw b
       imageUrl: "/assets/rwya_compressed.jpg",
       tabOption: TabOption.RWYA,
       hoverColorClass: "text-teal-600",
+      disabled: true,
+      disabledLabel: "Disabled",
       links: {
         youtube: "",
         bandcamp: "",
@@ -489,19 +493,29 @@ Shot on location in various desert environments, these visuals capture the raw b
                   "text-orange-600": "#ea580c",
                 };
                 const hoverColor = hoverColorMap[album.hoverColorClass] || "#000";
+                const isDisabled = album.disabled;
 
                 return (
                   <div
                     key={album.title}
-                    onClick={() => onTabChange(album.tabOption)}
-                    className={`group transition-transform duration-300 hover:scale-105 ${album.tabOption === TabOption.JOVE ? 'cursor-default' : 'cursor-pointer'}`}
+                    onClick={isDisabled ? undefined : () => onTabChange(album.tabOption)}
+                    className={`group transition-transform duration-300 ${isDisabled ? 'cursor-not-allowed opacity-80' : 'cursor-pointer hover:scale-105'} ${album.tabOption === TabOption.JOVE ? 'cursor-default' : ''}`}
+                    aria-disabled={isDisabled}
                   >
                     <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
-                      <img src={album.imageUrl} alt={`${album.title} cover art`} className="w-full h-full object-cover" />
+                      {isDisabled && (
+                        <div className="absolute top-2 right-2 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                          {album.disabledLabel || 'Disabled'}
+                        </div>
+                      )}
+                      <img src={album.imageUrl} alt={`${album.title} cover art`} className={`w-full h-full object-cover ${isDisabled ? 'grayscale' : ''}`} />
                     </div>
                     <h3
                       className="text-xl font-bold text-black transition-colors"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)}
+                      onMouseEnter={(e) => {
+                        if (isDisabled) return;
+                        e.currentTarget.style.color = hoverColor;
+                      }}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'black')}
                     >
                       {album.title}
@@ -1242,8 +1256,11 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-default rounded-md overflow-hidden">
+                <div className="absolute top-3 right-3 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                  Disabled
+                </div>
+                <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover grayscale" />
               </div>
             </div>
           </>
