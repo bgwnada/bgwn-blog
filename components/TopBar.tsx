@@ -27,7 +27,7 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
   ];
 
   const showInternalTabs = musicTabs.includes(activeTab) || activeTab === TabOption.MUSIC;
-  const disabledMusicTabs = new Set<TabOption>([TabOption.RWYA]);
+  const disabledMusicTabs = new Set<TabOption>([TabOption.SIXTY9, TabOption.RWYA]);
 
   const navItems = [
     TabOption.HOME,

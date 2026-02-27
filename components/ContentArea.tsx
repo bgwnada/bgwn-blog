@@ -219,6 +219,8 @@ Shot on location in various desert environments, these visuals capture the raw b
       imageUrl: "/assets/sixty9_compressed.jpg",
       tabOption: TabOption.SIXTY9,
       hoverColorClass: "text-pink-600",
+      disabled: true,
+      disabledLabel: "Disabled",
       links: {
         youtube: "",
         bandcamp: "",
@@ -1232,8 +1234,11 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-default rounded-md overflow-hidden">
+                <div className="absolute top-3 right-3 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                  Disabled
+                </div>
+                <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover grayscale" />
               </div>
             </div>
           </>
