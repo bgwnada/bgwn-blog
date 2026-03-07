@@ -3,15 +3,15 @@ import Head from 'next/head';
 import BgwnApp from '../App';
 import { TabOption } from '../types';
 
-const HomePage: NextPage = () => {
+const BlogPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Home | BGWN Records</title>
+        <title>Blog | BGWN Records</title>
       </Head>
-      <BgwnApp initialTab={TabOption.HOME} />
+      <BgwnApp initialTab={TabOption.BLOG} />
     </>
   );
 };
 
-export default HomePage;
+export default BlogPage;
