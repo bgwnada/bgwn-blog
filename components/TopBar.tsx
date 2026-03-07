@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Lock, Menu, X } from 'lucide-react';
 import { TabOption } from '../types';
 
@@ -29,18 +30,17 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
   const showInternalTabs = musicTabs.includes(activeTab) || activeTab === TabOption.MUSIC;
   const disabledMusicTabs = new Set<TabOption>([TabOption.SIXTY9, TabOption.RWYA]);
 
-  const navItems = [
-    TabOption.HOME,
-    TabOption.MUSIC,
-    TabOption.BLOG,
-    TabOption.ABOUT,
-    TabOption.ARTIST,
-    TabOption.VISUALS,
-    TabOption.SUPPORT,
+  const navItems: Array<{ tab: TabOption; href: string }> = [
+    { tab: TabOption.HOME, href: '/home' },
+    { tab: TabOption.MUSIC, href: '/music' },
+    { tab: TabOption.BLOG, href: '/blog' },
+    { tab: TabOption.ABOUT, href: '/about-us' },
+    { tab: TabOption.ARTIST, href: '/artist' },
+    { tab: TabOption.VISUALS, href: '/visuals' },
+    { tab: TabOption.SUPPORT, href: '/support' },
   ];
 
-  const handleNavClick = (tab: TabOption) => {
-    onTabChange(tab);
+  const handleMobileNavClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -54,17 +54,17 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-3">
-          {navItems.map((tab) => {
+          {navItems.map(({ tab, href }) => {
             const isActive = activeTab === tab || (tab === TabOption.MUSIC && musicTabs.includes(activeTab));
             return (
-              <button
+              <Link
                 key={tab}
-                onClick={() => onTabChange(tab)}
+                href={href}
                 className={`px-3 py-1 rounded-sm text-sm font-semibold tracking-wide transition-colors duration-150 ${isActive ? 'bg-white text-black shadow-sm border-b-2 border-blue-500' : 'text-gray-300 hover:text-white'}`}
                 aria-current={isActive ? 'page' : undefined}
               >
                 {tab}
-              </button>
+              </Link>
             );
           })}
         </nav>
@@ -84,16 +84,17 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden mt-4 pt-4 border-t border-white/10 space-y-2">
-          {navItems.map((tab) => {
+          {navItems.map(({ tab, href }) => {
             const isActive = activeTab === tab || (tab === TabOption.MUSIC && musicTabs.includes(activeTab));
             return (
-              <button
+              <Link
                 key={tab}
-                onClick={() => handleNavClick(tab)}
+                href={href}
+                onClick={handleMobileNavClick}
                 className={`block w-full text-left px-4 py-2 rounded-sm text-sm font-semibold transition-colors duration-150 ${isActive ? 'bg-white text-black' : 'text-gray-300 hover:bg-white/10'}`}
               >
                 {tab}
-              </button>
+              </Link>
             );
           })}
         </div>
