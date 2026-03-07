@@ -478,9 +478,9 @@ Shot on location in various desert environments, these visuals capture the raw b
       case TabOption.MUSIC:
         return (
           <div className="p-8 h-full overflow-y-auto">
-            <h2 className="text-4xl font-bold text-black mb-8 border-b border-white/10 pb-4 flex items-center">
+            {/* <h2 className="text-4xl font-bold text-black mb-8 border-b border-white/10 pb-4 flex items-center">
               <Headphones className="mr-4 w-8 h-8" /> Music Catalog
-            </h2>
+            </h2> */}
 
             {/* Music Albums Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
