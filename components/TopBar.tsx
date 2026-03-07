@@ -28,12 +28,11 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
   ];
 
   const showInternalTabs = musicTabs.includes(activeTab) || activeTab === TabOption.MUSIC;
-  const disabledMusicTabs = new Set<TabOption>([TabOption.SIXTY9, TabOption.RWYA]);
+  const disabledMusicTabs = new Set<TabOption>([TabOption.SIXTY9, TabOption.KALIDESKOPE, TabOption.RWYA, TabOption.TIX]);
 
   const navItems: Array<{ tab: TabOption; href: string }> = [
     { tab: TabOption.HOME, href: '/home' },
     { tab: TabOption.MUSIC, href: '/music' },
-    { tab: TabOption.BLOG, href: '/blog' },
     { tab: TabOption.ABOUT, href: '/about-us' },
     { tab: TabOption.ARTIST, href: '/artist' },
     { tab: TabOption.VISUALS, href: '/visuals' },

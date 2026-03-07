@@ -17,7 +17,6 @@ function App({ initialTab = TabOption.HOME }: BgwnAppProps) {
     () => ({
       [TabOption.HOME]: '/home',
       [TabOption.MUSIC]: '/music',
-      [TabOption.BLOG]: '/blog',
       [TabOption.ABOUT]: '/about-us',
       [TabOption.ARTIST]: '/artist',
       [TabOption.VISUALS]: '/visuals',

@@ -1,17 +1,14 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import BgwnApp from '../App';
-import { TabOption } from '../types';
+import type { GetServerSideProps, NextPage } from 'next';
 
-const BlogPage: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Blog | BGWN Records</title>
-      </Head>
-      <BgwnApp initialTab={TabOption.BLOG} />
-    </>
-  );
+const BlogPage: NextPage = () => null;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    redirect: {
+      destination: '/home',
+      permanent: false,
+    },
+  };
 };
 
 export default BlogPage;

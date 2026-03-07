@@ -132,7 +132,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
             <ArtistCard
               name="KALIDESKOPE"
               color="bg-cyan-600"
-              onClick={() => handleNavigation(TabOption.KALIDESKOPE)}
+              disabled
             />
             <ArtistCard
               name="RWYA"
