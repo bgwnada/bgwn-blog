@@ -16,6 +16,8 @@ export interface ArtistCardProps {
   logoText?: string;
   subText?: string;
   onClick?: () => void;
+  disabled?: boolean;
+  disabledLabel?: string;
 }
 
 export interface Blog {

@@ -107,6 +107,8 @@ Shot on location in various desert environments, these visuals capture the raw b
     tabOption: TabOption;
     displayType?: string;
     hoverColorClass: string;
+    disabled?: boolean;
+    disabledLabel?: string;
     links: {
       youtube?: string;
       bandcamp?: string;
@@ -217,6 +219,8 @@ Shot on location in various desert environments, these visuals capture the raw b
       imageUrl: "/assets/sixty9_compressed.jpg",
       tabOption: TabOption.SIXTY9,
       hoverColorClass: "text-pink-600",
+      disabled: true,
+      disabledLabel: "Disabled",
       links: {
         youtube: "",
         bandcamp: "",
@@ -232,6 +236,8 @@ Shot on location in various desert environments, these visuals capture the raw b
       imageUrl: "/assets/kalideskope_compressed.jpg",
       tabOption: TabOption.KALIDESKOPE,
       hoverColorClass: "text-cyan-600",
+      disabled: true,
+      disabledLabel: "Disabled",
       links: {
         youtube: "",
         bandcamp: "",
@@ -247,6 +253,8 @@ Shot on location in various desert environments, these visuals capture the raw b
       imageUrl: "/assets/rwya_compressed.jpg",
       tabOption: TabOption.RWYA,
       hoverColorClass: "text-teal-600",
+      disabled: true,
+      disabledLabel: "Disabled",
       links: {
         youtube: "",
         bandcamp: "",
@@ -307,6 +315,8 @@ Shot on location in various desert environments, these visuals capture the raw b
       imageUrl: "/assets/tix.jpg",
       tabOption: TabOption.TIX,
       hoverColorClass: "text-teal-600",
+      disabled: true,
+      disabledLabel: "Disabled",
       links: {
         youtube: "",
         bandcamp: "",
@@ -452,7 +462,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                 {blogs.map((blog) => (
                   <div key={blog.id} className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
                     <h3 className="text-2xl font-semibold mb-2">{blog.title}</h3>
-                    <div className="text-xs text-gray-500 mb-4">
+                    <div className="text-xs text-black mb-4">
                       {blog.date} • by {blog.author}
                     </div>
                     <p className="text-sm text-black mb-4">{blog.excerpt}</p>
@@ -468,9 +478,9 @@ Shot on location in various desert environments, these visuals capture the raw b
       case TabOption.MUSIC:
         return (
           <div className="p-8 h-full overflow-y-auto">
-            <h2 className="text-4xl font-bold text-black mb-8 border-b border-white/10 pb-4 flex items-center">
+            {/* <h2 className="text-4xl font-bold text-black mb-8 border-b border-white/10 pb-4 flex items-center">
               <Headphones className="mr-4 w-8 h-8" /> Music Catalog
-            </h2>
+            </h2> */}
 
             {/* Music Albums Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
@@ -489,19 +499,29 @@ Shot on location in various desert environments, these visuals capture the raw b
                   "text-orange-600": "#ea580c",
                 };
                 const hoverColor = hoverColorMap[album.hoverColorClass] || "#000";
+                const isDisabled = album.disabled;
 
                 return (
                   <div
                     key={album.title}
-                    onClick={() => onTabChange(album.tabOption)}
-                    className={`group transition-transform duration-300 hover:scale-105 ${album.tabOption === TabOption.JOVE ? 'cursor-default' : 'cursor-pointer'}`}
+                    onClick={isDisabled ? undefined : () => onTabChange(album.tabOption)}
+                    className={`group transition-transform duration-300 ${isDisabled ? 'cursor-not-allowed opacity-80' : 'cursor-pointer hover:scale-105'} ${album.tabOption === TabOption.JOVE ? 'cursor-default' : ''}`}
+                    aria-disabled={isDisabled}
                   >
                     <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
-                      <img src={album.imageUrl} alt={`${album.title} cover art`} className="w-full h-full object-cover" />
+                      {isDisabled && (
+                        <div className="absolute top-2 right-2 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                          {album.disabledLabel || 'Disabled'}
+                        </div>
+                      )}
+                      <img src={album.imageUrl} alt={`${album.title} cover art`} className={`w-full h-full object-cover ${isDisabled ? 'grayscale' : ''}`} />
                     </div>
                     <h3
                       className="text-xl font-bold text-black transition-colors"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)}
+                      onMouseEnter={(e) => {
+                        if (isDisabled) return;
+                        e.currentTarget.style.color = hoverColor;
+                      }}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'black')}
                     >
                       {album.title}
@@ -1218,8 +1238,11 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-default rounded-md overflow-hidden">
+                <div className="absolute top-3 right-3 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                  Disabled
+                </div>
+                <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover grayscale" />
               </div>
             </div>
           </>
@@ -1230,8 +1253,11 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-default rounded-md overflow-hidden">
+                <div className="absolute top-3 right-3 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                  Disabled
+                </div>
+                <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover grayscale" />
               </div>
             </div>
           </>
@@ -1242,8 +1268,11 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-default rounded-md overflow-hidden">
+                <div className="absolute top-3 right-3 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                  Disabled
+                </div>
+                <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover grayscale" />
               </div>
             </div>
           </>
@@ -1420,8 +1449,6 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <>
             <div className="flex-grow p-8">
-              <h2 className="text-4xl font-bold text-black mb-6 align-left">KATLYST</h2>
-
               <div className="items-start md:items-stretch gap-8">
                 <div className="w-full items-center justify-center">
                   <div className="relative w-full aspect-square shadow-2xl overflow-hidden rounded-lg">
@@ -1638,8 +1665,11 @@ Shot on location in various desert environments, these visuals capture the raw b
           <>
             <div className="flex-grow flex flex-col items-center justify-center p-8">
               {/* Album Art - use actual cover image */}
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
-                <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-default rounded-md overflow-hidden">
+                <div className="absolute top-3 right-3 z-20 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide bg-black text-white">
+                  Disabled
+                </div>
+                <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover grayscale" />
               </div>
 
 
