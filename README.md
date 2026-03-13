@@ -1,23 +1,32 @@
-# bgwnrecords.xyz
+# Next React Starter
+
+A clean Next.js starter (Pages Router) configured for deployment on Vercel.
+
+## Prerequisites
+
+- Node.js 20+
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
-
 1. Install dependencies:
-   `npm install`
-2. Run the app:
-   `npm run dev`
+   npm install
+2. Start the development server:
+   npm run dev
+3. Open:
+   http://localhost:3000
 
-Tip: Open http://localhost:3000 after running the dev server to view the site (Next.js default).
+## Build and Start
 
-## Project Structure
+1. Build production assets:
+   npm run build
+2. Start the production server:
+   npm run start
 
-This project is organized for the Next.js Pages Router:
+## Deploy on Vercel
 
-- `pages/_app.tsx` for global app bootstrap
-- `pages/_document.tsx` for the HTML document shell
-- `pages/index.tsx` as the home route
+1. Push this repository to GitHub.
+2. Import the repository in Vercel.
+3. Keep framework preset as Next.js.
+4. Deploy.
 
-To view the POSER assets you added, open the Music Catalog and click the POSER card; the three new images appear in that album's page.
+Vercel will use the standard Next.js build and output automatically.
